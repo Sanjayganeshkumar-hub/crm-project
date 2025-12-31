@@ -11,7 +11,7 @@ const JWT_SECRET = 'your_secret_key_change_this';
 app.use(cors());
 app.use(express.json());
 
-mongoose.connect('mongodb+srv://admin:Madan2006@cluster0.llzlsy2.mongodb.net/crm_database', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/crm_database', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 }).then(() => console.log('MongoDB Connected'))
